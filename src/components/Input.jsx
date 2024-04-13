@@ -14,7 +14,7 @@ export default function Input({ getResponse }) {
       />
       <button
         className="bg-gray-400 text-white font-semibold p-1 text-xl px-3 rounded-lg"
-        onClick={(e) => getResponse(e, prompt)}
+        onClick={(e) =>{setPrompt(""); getResponse(e, prompt)}}
       >
         Ask
       </button>

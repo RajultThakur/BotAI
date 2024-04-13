@@ -12,7 +12,7 @@ function Home() {
   const scroll = useRef(null);
 
   const handleClick = async (e, prompt) => {
-    let response = data.find((ele) => ele.question === prompt);
+    let response = data.find((ele) => ele.question.toLowerCase() === prompt.toLowerCase());
     if (!response) {
       response = {
         question: prompt,

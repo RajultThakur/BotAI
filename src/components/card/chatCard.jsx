@@ -1,6 +1,5 @@
 import React from "react";
 import BasicRating from "../Rating";
-
 export function ChatCard({
   content,
   type = "",
@@ -24,15 +23,6 @@ export function ChatCard({
           <p className="text-xs text-right text-blue-400">{date}</p>
         </div>
       </div>
-    </div>
-  );
-}
-
-export function historyCard({ prompt, response, data }) {
-  return (
-    <div>
-      <p></p>
-      <p></p>
     </div>
   );
 }
