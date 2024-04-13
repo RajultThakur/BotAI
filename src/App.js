@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Sidebar from "./components/sidebar";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from "./pages/home";
+import History from "./pages/history";
+import NotFound from "./components/notFound";
+import { Toaster } from "react-hot-toast"
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col h-screen">
+      <Toaster />
+      <Router>
+        <Sidebar />
+        <div className=' w-full pt-2 max-md:p-0 flex-1'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/history' element={<History />} />
+            <Route path='*' exact={true} element={<NotFound />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }
