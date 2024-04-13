@@ -81,6 +81,7 @@ function Home() {
       )}
       <div className="flex items-center max-sm:flex-wrap">
         <Input getResponse={handleClick} />
+        <PromptModal question={history} />
       </div>
     </div>
   );
